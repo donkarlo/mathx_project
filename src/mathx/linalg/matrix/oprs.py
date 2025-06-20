@@ -1,4 +1,4 @@
-from linalg.matrix.matrix import Matrix
+from mathx.linalg.matrix.matrix import Matrix
 
 
 class Oprs:

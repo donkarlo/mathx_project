@@ -1,10 +1,7 @@
-from typing import Union, List, Tuple
 import numpy as np
 import numpy.typing as npt
 
 from typing import Annotated, Union, List, Tuple
-import numpy as np
-import numpy.typing as npt
 import array
 
 MatrixLike = Union[
