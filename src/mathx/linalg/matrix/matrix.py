@@ -15,27 +15,14 @@ MatrixLike = Union[
 
 class Matrix:
     def __init__(self, raw_data: MatrixLike):
-        self.__raw_data = raw_data
+        self._raw_data = raw_data
         if not self.__is_valid_2d():
             raise TypeError("Expected a 2D array-like structure (n × m)")
-        self.__np_rows = np.asarray(self.__raw_data)
+        self._np_rows = np.asarray(self._raw_data)
 
-    def __is_valid_2d(self) -> bool:
-        if isinstance(self.__raw_data, np.ndarray):
-            return self.__raw_data.ndim == 2
+    def get_dims(self)->tuple[int, int]:
+        return self._np_rows.shape
 
-        elif isinstance(self.__raw_data, (list, tuple)):
-            if not self.__raw_data:
-                return False
-
-            # Handle inner array.array
-            if all(isinstance(row, array.array) for row in self.__raw_data):
-                row_length = len(self.__raw_data[0])
-                return all(len(row) == row_length for row in self.__raw_data)
-
-            # Handle inner list/tuple
-            if all(isinstance(row, (list, tuple)) for row in self.__raw_data):
-                row_length = len(self.__raw_data[0])
-                return all(len(row) == row_length for row in self.__raw_data)
-
-        return False
+    def get_dims_with_multi_sign(self)->str:
+        rows, cols = self._np_rows.shape
+        return f"{rows} × {cols}"

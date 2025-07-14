@@ -1,4 +1,4 @@
-from mathx.linalg.matrix.vec import Vec
+from mathx.linalg.matrix.vec.vec import Vec
 
 
 class RowVec(Vec):
