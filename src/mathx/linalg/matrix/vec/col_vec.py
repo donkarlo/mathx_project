@@ -20,4 +20,4 @@ class ColVec:
                 self._col_vec = raw_vec
 
     def extend_vertically(self, extension:"ColVec")->None:
-        self._col_vec = np.vstack((a, b))
+        self._col_vec = np.vstack((self._col_vec, extension))
