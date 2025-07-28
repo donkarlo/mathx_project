@@ -5,7 +5,7 @@ from mathx.linalg.matrix.matrix import Matrix
 
 
 class Vec(Matrix):
-    def __init__(self, components:Union[np.ndarray, Sequence]):
+    def __init__(self, components:np.ndarray):
         "Anything here will work with numpy"
         if self._is_2d():
             super().__init__(components)
