@@ -26,3 +26,17 @@ class Matrix:
     def get_dims_with_multi_sign(self)->str:
         rows, cols = self._np_rows.shape
         return f"{rows} × {cols}"
+
+    def transpose(self) -> "Matrix":
+        """Return a new Matrix object that is the transpose of this one."""
+        transposed_data = self._np_rows.T
+        return Matrix(transposed_data)
+
+    def __is_valid_2d(self) -> bool:
+        try:
+            arr = np.asarray(self._raw_data)
+            return arr.ndim == 2
+        except Exception:
+            return False
+
+
