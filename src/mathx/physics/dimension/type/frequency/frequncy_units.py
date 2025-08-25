@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import IntEnum, auto
 
 class FrequencyUnit(IntEnum):
     HERZ = auto()

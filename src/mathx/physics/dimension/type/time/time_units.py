@@ -1,6 +1,6 @@
-from enum import Enum, auto
+from enum import IntEnum, auto
 
-class TimeUnit(Enum):
+class TimeUnit(IntEnum):
     SECOND = auto()
     MINUTE = auto()
     HOUR = auto()
