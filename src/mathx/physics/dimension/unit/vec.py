@@ -1,7 +1,7 @@
-from mathx.linalg.matrix.vec.vec import Vec
+from mathx.linalg.matrix.vec.vec import Vec as LinalgVec
 
-class UnitedVec:
-    def __init__(self, unit:Unit, val:Vec):
+class Vec:
+    def __init__(self, unit:Unit, val: LinalgVec):
         self._unit = unit
         self._val = val
 
