@@ -1,8 +1,8 @@
 from typing import Union, Sequence
 import numpy as np
 
-from mathx.vec.col import Col
-from mathx.vec.row import Row
+from mathx.linalg.vec.col import Col
+from mathx.linalg.vec.row import Row
 
 
 class Vec:

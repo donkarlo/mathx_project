@@ -1,5 +1,5 @@
 import numpy as np
-from mathx.vec.vec import Vec
+from mathx.linalg.vec.vec import Vec
 
 
 class TwoOpr:

@@ -1,7 +1,7 @@
 from typing import Union, Sequence
 import numpy as np
 
-from mathx.vec.vec import Vec
+from mathx.linalg.vec.vec import Vec
 
 
 class Row(Vec):
