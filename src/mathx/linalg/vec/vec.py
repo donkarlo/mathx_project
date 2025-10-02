@@ -1,8 +1,10 @@
-from typing import Union, Sequence
-import numpy as np
+from typing import Union, Sequence, TYPE_CHECKING
 
-from mathx.linalg.vec.col import Col
-from mathx.linalg.vec.row import Row
+if TYPE_CHECKING:
+    from mathx.linalg.vec.row import Row
+    from mathx.linalg.vec.col import Col
+
+import numpy as np
 
 
 class Vec:
@@ -24,14 +26,16 @@ class Vec:
         return self._components
 
 
-    def get_row_vec(self) -> Row:
+    def get_row_vec(self) -> "Row":
         """
         Return the vector as a row vector of shape (1, n).
         """
+        from mathx.linalg.vec.row import Row
         return Row(self)
 
-    def get_col_vec(self) -> Col:
+    def get_col_vec(self) -> "Col":
         """
         Return the vector as a column vector of shape (n, 1).
         """
+        from mathx.linalg.vec.col import Col
         return Col(self)

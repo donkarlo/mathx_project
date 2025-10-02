@@ -1,0 +1,2 @@
+class PointCloudDefined:
+    pass

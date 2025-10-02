@@ -1,0 +1,2 @@
+class LineDefined:
+    pass
