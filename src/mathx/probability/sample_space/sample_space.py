@@ -1,0 +1,2 @@
+class SampleSpace:
+    pass

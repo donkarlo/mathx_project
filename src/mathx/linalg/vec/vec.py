@@ -25,6 +25,9 @@ class Vec:
         """
         return self._components
 
+    def get_dim(self)->int:
+        return self._components_len
+
 
     def get_row_vec(self) -> "Row":
         """
@@ -39,3 +42,5 @@ class Vec:
         """
         from mathx.linalg.vec.col import Col
         return Col(self)
+
+
