@@ -13,11 +13,18 @@ class Vec:
         Vec holds an array of shape (n,).
         You can convert it into a row or column vector when needed.
         """
-        self._components = np.asarray(components, dtype=float)
-        if self._components.ndim != 1:
-            raise ValueError(f"Expected a flat 1D vector, got shape {self._components.shape}")
+        self.__init(components)
 
+    def set_components(self, components: Union[Sequence[float], np.ndarray]) -> None:
+        self.__init(components)
+
+    def __init(self, components: Union[Sequence[float], np.ndarray]):
+        components = np.asarray(components, dtype=float)
+        if components.ndim != 1:
+            raise ValueError(f"Expected a flat 1D vector, got shape {self._components.shape}")
+        self._components = components
         self._components_len = self._components.shape[0]
+
 
     def get_components(self) -> np.ndarray:
         """
