@@ -1,0 +1,3 @@
+from typing import Protocol
+class TensorRepresentable(Protocol):
+    def get_tensor_representation(self) -> Tensor: ...

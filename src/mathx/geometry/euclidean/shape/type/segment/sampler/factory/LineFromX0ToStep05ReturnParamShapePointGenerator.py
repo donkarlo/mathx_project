@@ -17,14 +17,14 @@ class LineFromX0ToStep05ReturnParamShapePointGenerator(ParamShapePointGeneratorC
         l2pg = ParamLinePointGenerator(l2, distanceInterval, 0, 20)
         l2pg.echoPoints()
 
-
-
         self \
             .add(l1pg) \
             .add(l2pg)
+
 
 if __name__ == '__main__':
     tspsg = LineFromX0ToStep05ReturnParamShapePointGenerator(0.5)
     tspsg.plot3DPoints()
     tspsg.getPoints().addDim(0)
-    tspsg.getPoints().echoFile("/home/donkarlo/mrs_workspace/src/trajectory_loader/sample_trajectories/LineFromX0ToStep05Return.txt", " ")
+    tspsg.getPoints().echoFile(
+        "/home/donkarlo/mrs_workspace/src/trajectory_loader/sample_trajectories/LineFromX0ToStep05Return.txt", " ")

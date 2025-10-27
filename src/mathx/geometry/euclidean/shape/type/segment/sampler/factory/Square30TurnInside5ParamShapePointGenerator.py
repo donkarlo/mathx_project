@@ -14,27 +14,27 @@ class Square30TurnInside5ParamShapePointGenerator(ParamShapePointGeneratorCompos
         l1pg.echoPoints()
 
         print("new points")
-        #Go down 10 units
+        # Go down 10 units
         l2First = ParamShapeLine([0, -1, 0], [15, 15, 5])
         l2FirstPg = ParamLinePointGenerator(l2First, distanceInterval, 0, 10)
         l2FirstPg.echoPoints()
 
-        #Turn left
+        # Turn left
         l2Second = ParamShapeLine([-1, 0, 0], [15, 5, 5])
         l2SecondPg = ParamLinePointGenerator(l2Second, distanceInterval, 0, 5)
         l2SecondPg.echoPoints()
 
-        #Go down in
+        # Go down in
         l2Third = ParamShapeLine([0, -1, 0], [10, 5, 5])
         l2ThirdPg = ParamLinePointGenerator(l2Third, distanceInterval, 0, 10)
         l2ThirdPg.echoPoints()
 
-        #Turn right
+        # Turn right
         l2Forth = ParamShapeLine([1, 0, 0], [10, -5, 5])
         l2ForthPg = ParamLinePointGenerator(l2Forth, distanceInterval, 0, 5)
         l2ForthPg.echoPoints()
 
-        #Continue to go down 13 units
+        # Continue to go down 13 units
         l2Fifth = ParamShapeLine([0, -1, 0], [15, -5, 5])
         l2FifthPg = ParamLinePointGenerator(l2Fifth, distanceInterval, 0, 10)
         l2FifthPg.echoPoints()
@@ -61,8 +61,11 @@ class Square30TurnInside5ParamShapePointGenerator(ParamShapePointGeneratorCompos
             .add(l3pg) \
             .add(l4pg)
 
+
 if __name__ == '__main__':
     tspsg = Square30TurnInside5ParamShapePointGenerator(0.5)
     tspsg.plot3DPoints()
     tspsg.getPoints().addDim(0)
-    tspsg.getPoints().echoFile("/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/trajectory-points/square-30-turn-left-5-pcs-0-5.txt", " ")
+    tspsg.getPoints().echoFile(
+        "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/trajectory-points/square-30-turn-left-5-pcs-0-5.txt",
+        " ")

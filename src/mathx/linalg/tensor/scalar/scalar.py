@@ -1,0 +1,2 @@
+class Scalar(Tensor):
+    pass

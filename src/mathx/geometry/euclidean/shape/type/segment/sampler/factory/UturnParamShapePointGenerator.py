@@ -57,9 +57,11 @@ class RectangleParamShapePointGenerator(ParamShapePointGeneratorComposit):
             .add(l10pg) \
             .add(l11pg) \
             .add(l12pg) \
-
+ \
+ \
 if __name__ == '__main__':
     tspsg = RectangleParamShapePointGenerator(0.5)
     tspsg.plot3DPoints()
     tspsg.getPoints().addDim(0)
-    tspsg.getPoints().echoFile("/home/donkarlo/mrs_workspace/src/trajectory_loader/sample_trajectory/uturn-0-5.txt", " ")
+    tspsg.getPoints().echoFile("/home/donkarlo/mrs_workspace/src/trajectory_loader/sample_trajectory/uturn-0-5.txt",
+                               " ")

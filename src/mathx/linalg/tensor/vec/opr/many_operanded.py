@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List
-from mathx.linalg.vec.vec import Vec
+from mathx.linalg.tensor.vec.vec import Vec
 
 
 class ManyOperanded:

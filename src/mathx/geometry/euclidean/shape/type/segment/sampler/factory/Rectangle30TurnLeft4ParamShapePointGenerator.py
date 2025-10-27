@@ -57,8 +57,11 @@ class Rectangle30ParamShapePointGenerator(ParamShapePointGeneratorComposit):
             .add(l3pg) \
             .add(l4pg)
 
+
 if __name__ == '__main__':
     tspsg = Rectangle30ParamShapePointGenerator(0.5)
     tspsg.plot3DPoints()
     tspsg.getPoints().addDim(0)
-    tspsg.getPoints().echoFile("/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/trajectory-points/rectangle30TurnLeft4Pcs-0-5.txt", " ")
+    tspsg.getPoints().echoFile(
+        "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/trajectory-points/rectangle30TurnLeft4Pcs-0-5.txt",
+        " ")

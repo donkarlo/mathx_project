@@ -1,7 +1,7 @@
 from typing import Union, Sequence
 import numpy as np
 
-from mathx.linalg.vec.vec import Vec
+from mathx.linalg.tensor.vec.vec import Vec
 
 
 class Col(Vec):
@@ -10,7 +10,8 @@ class Col(Vec):
     Np.ndarray usually uses rows to show vectors but mathmaticians usually use the cilumn form
     - self._components.reshape(-1, 1)
     '''
-    def __init__(self, components:Union[Vec, Sequence[float],np.ndarray]):
+
+    def __init__(self, components: Union[Vec, Sequence[float], np.ndarray]):
         """
 
         Args:
@@ -19,15 +20,14 @@ class Col(Vec):
 
         if isinstance(components, Vec):
             components = components.get_components()
-        elif isinstance(components, (list,tuple)):
+        elif isinstance(components, (list, tuple)):
             components = np.asarray(components)
 
         super().__init__(components)
         self._col_components = self._components.reshape(-1, 1)
 
-    def extend_vertically(self, extension: "Col")->None:
+    def extend_vertically(self, extension: "Col") -> None:
         self._col_components = np.vstack((self._col_components, extension.get_col_components()))
 
     def get_col_components(self) -> np.ndarray:
         return self._col_components
-

@@ -1,5 +1,5 @@
 import numpy as np
-from mathx.linalg.vec.vec import Vec
+from mathx.linalg.tensor.vec.vec import Vec
 
 
 class TwoOpranded:

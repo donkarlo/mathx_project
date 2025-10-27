@@ -1,12 +1,12 @@
 from mathx.linalg.matrix.matrix import Matrix
 from mathx.linalg.matrix.square import Square as SquareMatrix
 from mathx.linalg.matrix.matrix_like_data_type import MatrixLikeDataType
-from mathx.linalg.vec.vec import Vec
+from mathx.linalg.tensor.vec.vec import Vec
 import numpy as np
 
 
 class CovarianceMatrix(SquareMatrix):
-    def __init__(self, raw_data: MatrixLikeDataType, validate:bool):
+    def __init__(self, raw_data: MatrixLikeDataType, validate: bool):
         super().__init__(raw_data)
         if validate:
             self.__validate()
@@ -67,4 +67,3 @@ class CovarianceMatrix(SquareMatrix):
         A_psd = V @ np.diag(w) @ V.T
         # Return validated instance (exact symmetry + PSD)
         return CovarianceMatrix(A_psd, validate=True)
-

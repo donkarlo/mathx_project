@@ -1,9 +1,10 @@
 from mathx.linalg.matrix.matrix_like_data_type import MatrixLikeDataType
-from mathx.linalg.vec.vec import Vec
+from mathx.linalg.tensor.vec.vec import Vec
 from mathx.linalg.matrix.matrix import Matrix
 
+
 class Square(Matrix):
-    def __init__(self, raw_data:MatrixLikeDataType):
+    def __init__(self, raw_data: MatrixLikeDataType):
         super().__init__(raw_data)
         if not self._is_square():
             raise ValueError("Expected a square raw_data")

@@ -1,10 +1,7 @@
 import numpy as np
-import numpy.typing as npt
-
-from typing import Annotated, Union, List, Tuple
-import array
 
 from mathx.linalg.matrix.matrix_like_data_type import MatrixLikeDataType
+
 
 class Matrix:
     def __init__(self, raw_data: MatrixLikeDataType):
@@ -13,11 +10,10 @@ class Matrix:
             raise TypeError("Expected a 2D array-like structure (n × m)")
         self._np_rows = np.asarray(self._raw_data)
 
-
-    def get_dims(self)->tuple[int, int]:
+    def get_dims(self) -> tuple[int, int]:
         return self._np_rows.shape
 
-    def get_dims_with_multi_sign(self)->str:
+    def get_dims_with_multi_sign(self) -> str:
         rows, cols = self._np_rows.shape
         return f"{rows} × {cols}"
 
@@ -33,11 +29,11 @@ class Matrix:
         except Exception:
             return False
 
-    def transpose(self)->"Matrix":
+    def transpose(self) -> "Matrix":
         return Matrix(self._np_rows.T)
 
     def is_square(self) -> bool:
-        return self._np_rows.shape[0]==self._np_rows.shape[1]
+        return self._np_rows.shape[0] == self._np_rows.shape[1]
 
     def pinv(self, rcond: float = 1e-15) -> "Matrix":
         """Moore-Penrose pseudoinverse via SVD; works for any shape."""
@@ -58,12 +54,8 @@ class Matrix:
         """A A^T (square, symmetric, PSD)."""
         return Matrix(self._np_rows @ self._np_rows.T)
 
-    def get_rows_count(self)->int:
+    def get_rows_count(self) -> int:
         return self.get_dims()[0]
 
     def get_columns_count(self) -> int:
         return self.get_dims()[1]
-
-
-
-

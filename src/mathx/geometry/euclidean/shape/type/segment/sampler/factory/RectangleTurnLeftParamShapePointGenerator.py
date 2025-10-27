@@ -37,7 +37,6 @@ class RectangleTurnLeftParamShapePointGenerator(ParamShapePointGeneratorComposit
         l5pg = ParamLinePointGenerator(l5, distanceInterval, 0, 3.33)
         l5pg.echoPoints()
 
-
         #############
         print("new points")
 
@@ -66,9 +65,11 @@ class RectangleTurnLeftParamShapePointGenerator(ParamShapePointGeneratorComposit
             .add(l6pg) \
             .add(l7pg) \
             .add(l8pg) \
-
+ \
+ \
 if __name__ == '__main__':
     tspsg = RectangleTurnLeftParamShapePointGenerator(0.5)
     tspsg.plot3DPoints()
     tspsg.getPoints().addDim(0)
-    tspsg.getPoints().echoFile("/home/donkarlo/mrs_workspace/src/trajectory_loader/sample_trajectory/my-rect-0-5-turn-left.txt", " ")
+    tspsg.getPoints().echoFile(
+        "/home/donkarlo/mrs_workspace/src/trajectory_loader/sample_trajectory/my-rect-0-5-turn-left.txt", " ")

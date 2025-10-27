@@ -1,7 +1,7 @@
 from typing import Union, Sequence
 import numpy as np
 
-from mathx.linalg.vec.vec import Vec
+from mathx.linalg.tensor.vec.vec import Vec
 
 
 class Row(Vec):
@@ -22,8 +22,6 @@ class Row(Vec):
         elif isinstance(components, (list, tuple)):
             components = np.asarray(components)
 
-
-
         super().__init__(components)
         self._row_components = self._components.reshape(1, -1)
 
@@ -32,4 +30,3 @@ class Row(Vec):
 
     def get_row_components(self) -> np.ndarray:
         return self._row_components
-
