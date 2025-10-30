@@ -7,6 +7,6 @@ if TYPE_CHECKING:
 
 @runtime_checkable
 class VectorRepresentable(TensorRepresentable, Protocol):
-    _vec_representation: "Vector"
+    _vector_representation: "Vector"
     """For things whic are reppresentable by vector"""
     def get_vector_representation(self)-> "Vector": ...

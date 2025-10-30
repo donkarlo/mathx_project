@@ -6,7 +6,7 @@ from mathx.linalg.matrix.matrix import Matrix
 class Square(Matrix):
     def __init__(self, raw_data: MatrixLikeDataType):
         super().__init__(raw_data)
-        if not self._is_square():
+        if not self.is_square():
             raise ValueError("Expected a square raw_data")
 
     def is_symmetric(self) -> bool:
