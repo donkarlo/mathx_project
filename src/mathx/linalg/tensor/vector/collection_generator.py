@@ -1,9 +1,9 @@
 from pathlib import Path
 from typing import Generic, TypeVar, Type, List
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 from utilix.data.storage.type.file.file import File
 
-VecType = TypeVar("VecType", bound=Vec)
+VecType = TypeVar("VecType", bound=Vector)
 
 
 class CollectionGenerator(Generic[VecType]):

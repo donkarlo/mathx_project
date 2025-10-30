@@ -1,18 +1,18 @@
 import numpy as np
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 
 
 class TwoOpranded:
-    def __init__(self, left_vec: Vec, right_vec: Vec):
+    def __init__(self, left_vec: Vector, right_vec: Vector):
         self._left_vec = left_vec
         self._right_vec = right_vec
 
-    def get_concated(self) -> Vec:
+    def concat(self) -> Vector:
         """
-        Concatenate left and right vectors into a new Vec.
+        Concatenate left and right vectors into a new Vector.
         """
         combined = np.concatenate((
             self._left_vec.get_components(),
             self._right_vec.get_components()
         ))
-        return Vec(combined)
+        return Vector(combined)

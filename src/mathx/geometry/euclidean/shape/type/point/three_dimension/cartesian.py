@@ -1,11 +1,11 @@
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 
 
-class Cartesian(Vec):
+class Cartesian(Vector):
     def __init__(self, x: float, y: float):
         self._x = x
         self._y = y
-        super(Vec).__init__([self._x, self._y])
+        super(Vector).__init__([self._x, self._y])
 
     def to_cartesian(self) -> "Cartesian":
         return self
@@ -16,5 +16,5 @@ class Cartesian(Vec):
     def get_y(self) -> float:
         return self._y
 
-    def change_origin(self, origin: Vec):
+    def change_origin(self, origin: Vector):
         pass

@@ -1,7 +1,7 @@
 from mathx.linalg.matrix.matrix import Matrix
 from mathx.linalg.matrix.square import Square as SquareMatrix
 from mathx.linalg.matrix.matrix_like_data_type import MatrixLikeDataType
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 import numpy as np
 
 
@@ -18,13 +18,13 @@ class CovarianceMatrix(SquareMatrix):
         if not self.is_psd():
             raise ValueError("Covariance matrix must be positive semidefinite (PSD)")
 
-    def get_variances(self) -> Vec:
+    def get_variances(self) -> Vector:
         """Return the diagonal (variances)."""
         return self.get_diagonal()
 
-    def get_std(self) -> Vec:
+    def get_std(self) -> Vector:
         """Return the standard deviations."""
-        return Vec(np.sqrt(self.get_variances().get_components()))
+        return Vector(np.sqrt(self.get_variances().get_components()))
 
     def get_correlation_matrix(self) -> Matrix:
         """Return the normalized correlation matrix."""

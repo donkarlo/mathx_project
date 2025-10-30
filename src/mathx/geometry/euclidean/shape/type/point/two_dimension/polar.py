@@ -1,6 +1,6 @@
 import numpy as np
 from mathx.geometry.euclidean.shape.type.point.two_dimension.cartesian import Cartesian
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 from typing import List, override
 from mathx.geometry.euclidean.shape.type.point.point import Point
 
@@ -19,7 +19,7 @@ class Polar(Point):
 
     @override
     @classmethod
-    def init_from_cartesian(cls, vec: Vec) -> "Polar":
+    def init_from_cartesian(cls, vec: Vector) -> "Polar":
         x = vec[0]
         y = vec[1]
         radius = np.sqrt(x * x + y * y)

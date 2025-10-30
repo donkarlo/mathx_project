@@ -7,7 +7,7 @@ class Tensor:
     def __init__(self, components: Union[Sequence[float], np.ndarray]):
         if not isinstance(components, np.ndarray):
             self._components = np.asarray(components)
-        self._rank = components.ndim
+        self._rank = self._components.ndim
 
     def get_rank(self) -> int:
         return self._rank

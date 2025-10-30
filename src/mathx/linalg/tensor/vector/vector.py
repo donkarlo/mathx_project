@@ -1,18 +1,18 @@
 from mathx.linalg.tensor.tensor import Tensor
-from mathx.linalg.tensor.vec.vec_representable import VecRepresentable
+from mathx.linalg.tensor.vector.vector_representable import VectorRepresentable
 from typing import Union, Sequence, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from mathx.linalg.tensor.vec.row import Row
-    from mathx.linalg.tensor.vec.col import Col
+    from mathx.linalg.tensor.vector.row import Row
+    from mathx.linalg.tensor.vector.col import Col
 
 import numpy as np
 
 
-class Vec(Tensor):
+class Vector(Tensor):
     def __init__(self, components: Union[Sequence[float], np.ndarray]) -> None:
         """
-        Vec holds an array of shape (n,).
+        Vector holds an array of shape (n,).
         You can convert it into a row or column vector when needed.
         - Vector is direction+magnititude, do not mistake it with point
         """
@@ -21,9 +21,10 @@ class Vec(Tensor):
     def set_components(self, components: Union[Sequence[float], np.ndarray]) -> None:
         self.__init(components)
 
-    def __init(self, components: Union[Sequence[float], np.ndarray, VecRepresentable]) -> None:
-        if isinstance(componets, VecRepresentable):
-            components = components.get_vec_representation().get_components()
+    def __init(self, components: Union[Sequence[float], np.ndarray, VectorRepresentable]) -> None:
+        #this line is for the time we want for example Vector(Position) work correctly
+        if isinstance(components, VectorRepresentable):
+            components = components.get_vector_representation().get_components()
             return
 
         components = np.asarray(components, dtype=float)
@@ -49,12 +50,12 @@ class Vec(Tensor):
         """
         Return the vector as a row vector of shape (1, n).
         """
-        from mathx.linalg.tensor.vec.row import Row
+        from mathx.linalg.tensor.vector.row import Row
         return Row(self)
 
     def get_col_vec(self) -> "Col":
         """
         Return the vector as a column vector of shape (n, 1).
         """
-        from mathx.linalg.tensor.vec.col import Col
+        from mathx.linalg.tensor.vector.col import Col
         return Col(self)

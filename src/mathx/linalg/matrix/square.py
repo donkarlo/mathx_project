@@ -1,5 +1,5 @@
 from mathx.linalg.matrix.matrix_like_data_type import MatrixLikeDataType
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 from mathx.linalg.matrix.matrix import Matrix
 
 
@@ -50,5 +50,5 @@ class Square(Matrix):
     def inverse(self) -> "Square":
         return Square(np.linalg.inv(self._np_rows))
 
-    def get_diagonal(self) -> Vec:
-        return Vec(np.diag(self._np_rows))
+    def get_diagonal(self) -> Vector:
+        return Vector(np.diag(self._np_rows))

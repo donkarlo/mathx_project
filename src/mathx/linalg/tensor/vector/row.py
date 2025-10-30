@@ -1,23 +1,23 @@
 from typing import Union, Sequence
 import numpy as np
 
-from mathx.linalg.tensor.vec.vec import Vec
+from mathx.linalg.tensor.vector.vector import Vector
 
 
-class Row(Vec):
+class Row(Vector):
     '''
     The main responsibility of this class is to represent column vector form of a vector.
     Np.ndarray usually uses rows to show vectors but mathmaticians usually use the cilumn form
     '''
 
-    def __init__(self, components: Union[Vec, Sequence[float], np.ndarray]):
+    def __init__(self, components: Union[Vector, Sequence[float], np.ndarray]):
         """
 
         Args:
             components:
         """
 
-        if isinstance(components, Vec):
+        if isinstance(components, Vector):
             components = components.get_components()
         elif isinstance(components, (list, tuple)):
             components = np.asarray(components)

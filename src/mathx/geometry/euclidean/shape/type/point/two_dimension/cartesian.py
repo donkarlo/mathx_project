@@ -1,7 +1,7 @@
-from mathx.linalg.tensor.vec.vec_representable import VecRepresentable
+from mathx.linalg.tensor.vector.vector_representable import VectorRepresentable
 
 
-class Cartesian(VecRepresentable):
+class Cartesian(VectorRepresentable):
     def __init__(self, x:float, y:float, z:float):
         self._x = x
         self._y = y
