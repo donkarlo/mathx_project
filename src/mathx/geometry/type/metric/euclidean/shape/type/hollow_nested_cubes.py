@@ -1,4 +1,4 @@
-from mathx.geometry.euclidean.shape.three_d import ThreeD
+from mathx.geometry.type.metric.euclidean.shape.three_d import ThreeD
 from physix.dimension.unit import Unit
 
 

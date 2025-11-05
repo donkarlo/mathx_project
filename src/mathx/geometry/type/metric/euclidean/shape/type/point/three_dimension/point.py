@@ -1,7 +1,7 @@
 from typing import List
 
 from mathx.linalg.tensor.vector.vector_representable import VectorRepresentable
-from mathx.geometry.euclidean.shape.type.point.point import Point as BasePoint
+from mathx.geometry.type.metric.euclidean.shape.type.point.point import Point as BasePoint
 
 
 class Point(BasePoint, VectorRepresentable):

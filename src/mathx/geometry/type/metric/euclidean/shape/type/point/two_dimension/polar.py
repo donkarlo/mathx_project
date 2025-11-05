@@ -1,8 +1,8 @@
 import numpy as np
-from mathx.geometry.euclidean.shape.type.point.two_dimension.cartesian import Cartesian
+from mathx.geometry.type.metric.euclidean.shape.type.point.two_dimension.cartesian import Cartesian
 from mathx.linalg.tensor.vector.vector import Vector
 from typing import List, override
-from mathx.geometry.euclidean.shape.type.point.point import Point
+from mathx.geometry.type.metric.euclidean.shape.type.point.point import Point
 
 
 class Polar(Point):

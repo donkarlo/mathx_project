@@ -1,4 +1,4 @@
-from mathx.geometry.euclidean.shape.shape import Shape
+from mathx.geometry.type.metric.euclidean.shape.shape import Shape
 from mathx.linalg.tensor.vector.vector import Vector
 from mathx.linalg.tensor.vector.vector_representable import VectorRepresentable
 
