@@ -33,9 +33,9 @@ class RectangleParamShapePointGenerator(ParamShapePointGeneratorComposit):
 
         self \
             .add(l1pg) \
-            .add(l2pg) \
-            .add(l3pg) \
-            .add(l4pg)
+            .add_child(l2pg) \
+            .add_child(l3pg) \
+            .add_child(l4pg)
 
 
 if __name__ == '__main__':

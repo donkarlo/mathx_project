@@ -25,8 +25,8 @@ class SlopedTriangleParamShapePointGenerator(ParamShapePointGeneratorComposit):
 
         self \
             .add(l1pg) \
-            .add(l2pg) \
-            .add(l3pg)
+            .add_child(l2pg) \
+            .add_child(l3pg)
 
 
 tspsg = SlopedTriangleParamShapePointGenerator(0.5)

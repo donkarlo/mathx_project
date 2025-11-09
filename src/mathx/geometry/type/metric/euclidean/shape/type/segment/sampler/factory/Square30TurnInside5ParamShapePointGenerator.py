@@ -53,13 +53,13 @@ class Square30TurnInside5ParamShapePointGenerator(ParamShapePointGeneratorCompos
 
         self \
             .add(l1pg) \
-            .add(l2FirstPg) \
-            .add(l2SecondPg) \
-            .add(l2ThirdPg) \
-            .add(l2ForthPg) \
-            .add(l2FifthPg) \
-            .add(l3pg) \
-            .add(l4pg)
+            .add_child(l2FirstPg) \
+            .add_child(l2SecondPg) \
+            .add_child(l2ThirdPg) \
+            .add_child(l2ForthPg) \
+            .add_child(l2FifthPg) \
+            .add_child(l3pg) \
+            .add_child(l4pg)
 
 
 if __name__ == '__main__':

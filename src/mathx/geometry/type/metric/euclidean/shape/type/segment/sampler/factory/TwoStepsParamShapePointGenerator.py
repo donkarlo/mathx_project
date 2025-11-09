@@ -55,13 +55,13 @@ class TwoStepsParamShapePointGenerator(ParamShapePointGeneratorComposit):
 
         self \
             .add(l1pg) \
-            .add(l2pg) \
-            .add(l3pg) \
-            .add(l4pg) \
-            .add(l5pg) \
-            .add(l6pg) \
-            .add(l7pg) \
-            .add(l8pg)
+            .add_child(l2pg) \
+            .add_child(l3pg) \
+            .add_child(l4pg) \
+            .add_child(l5pg) \
+            .add_child(l6pg) \
+            .add_child(l7pg) \
+            .add_child(l8pg)
 
 
 tspsg = TwoStepsParamShapePointGenerator(0.5)

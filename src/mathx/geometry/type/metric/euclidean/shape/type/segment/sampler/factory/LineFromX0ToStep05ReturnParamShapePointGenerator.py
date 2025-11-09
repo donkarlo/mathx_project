@@ -19,7 +19,7 @@ class LineFromX0ToStep05ReturnParamShapePointGenerator(ParamShapePointGeneratorC
 
         self \
             .add(l1pg) \
-            .add(l2pg)
+            .add_child(l2pg)
 
 
 if __name__ == '__main__':

@@ -24,7 +24,7 @@ class ParamShapePointGeneratorComponent:
             point.echo()
 
     def _addPoint(self, point: Point):
-        self._points.add(point)
+        self._points.add_child(point)
 
     def getDim(self) -> int:
         return len(self.getPoints().getDim())

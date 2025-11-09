@@ -47,17 +47,17 @@ class RectangleTurnLeftParamShapePointGenerator(ParamShapePointGeneratorComposit
 
         self \
             .add(l1pg) \
-            .add(l2pg) \
-            .add(l3pg) \
-            .add(l4pg) \
-            .add(l5pg) \
-            .add(l6pg) \
-            .add(l7pg) \
-            .add(l8pg) \
-            .add(l9pg) \
-            .add(l10pg) \
-            .add(l11pg) \
-            .add(l12pg) \
+            .add_child(l2pg) \
+            .add_child(l3pg) \
+            .add_child(l4pg) \
+            .add_child(l5pg) \
+            .add_child(l6pg) \
+            .add_child(l7pg) \
+            .add_child(l8pg) \
+            .add_child(l9pg) \
+            .add_child(l10pg) \
+            .add_child(l11pg) \
+            .add_child(l12pg) \
  \
  \
 if __name__ == '__main__':

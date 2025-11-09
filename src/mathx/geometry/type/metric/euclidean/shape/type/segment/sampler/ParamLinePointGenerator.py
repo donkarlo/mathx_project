@@ -29,5 +29,5 @@ class ParamLinePointGenerator(ParamShapePointGeneratorLeaf):
             cords = []
             for dimCtr in range(self.getDim()):
                 cords.append(self._paramLine._normalVector[dimCtr] * t + self._paramLine._startPoint[dimCtr])
-            self._points.add(Point(cords))
+            self._points.add_child(Point(cords))
             t += self._distanceInterval
