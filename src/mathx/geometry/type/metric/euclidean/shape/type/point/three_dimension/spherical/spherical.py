@@ -1,8 +1,9 @@
+from mathx.geometry.type.metric.euclidean.shape.type.point.two_dimension.polar import Polar
 
 
-class Spherical(Point):
+class Spherical(Polar):
     def __init__(self, radius, xy_angle: float, xy_z_angle: float):
-        super().__init__([radius, xy_angle, xy_z_angle])
+        super().__init__(radius, xy_angle)
         self._radius = radius
         self._xy_angle = xy_angle
         self._xy_z_angle = xy_z_angle

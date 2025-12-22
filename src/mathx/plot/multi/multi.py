@@ -1,0 +1,2 @@
+class MultiPlot:
+    pass
