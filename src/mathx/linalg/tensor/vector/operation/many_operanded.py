@@ -13,7 +13,7 @@ class ManyOperanded:
         if not self._vec_list:
             raise ValueError("The vector list is empty.")
 
-        # start with the components of the first Vector
+        # top with the components of the first Vector
         concated = self._vec_list[0].get_components()
 
         # concatenate the rest

@@ -1,4 +1,4 @@
-from mathx.numbers.real.interval.bound import Bound
+from mathx.numbers.kind.real.interval.bound import Bound
 
 
 class Interval:
