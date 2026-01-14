@@ -1,0 +1,2 @@
+class Realed:
+    pass

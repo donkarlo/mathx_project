@@ -1,0 +1,2 @@
+class HypathesisTesting:
+    pass
