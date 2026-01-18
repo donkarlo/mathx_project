@@ -67,5 +67,5 @@ if __name__ == '__main__':
     tspsg.plot3DPoints()
     tspsg.getPoints().addDim(0)
     tspsg.getPoints().echoFile(
-        "/home/donkarlo/Dropbox/projs/research/data/self-aware-drones/trajectory-points/square-30-turn-left-5-pcs-0-5.txt",
+        "/home/donkarlo/Dropbox/projs/research/data_set/self-aware-drones/trajectory-points/square-30-turn-left-5-pcs-0-5.txt",
         " ")
