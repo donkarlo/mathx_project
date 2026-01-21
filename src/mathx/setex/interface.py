@@ -1,9 +1,9 @@
-from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, runtime_checkable, Protocol
 
-def Interface(ABC, Protocol):
+
+@runtime_checkable
+class Interface(Protocol):
     _members: Any
-    @abstractmethod
     def __init__(self, _members:Any):
         ...
 

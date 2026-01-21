@@ -29,10 +29,10 @@ class Numpied(Population):
 
         complement_indices = np.setdiff1d(all_indices, subset_indices)
 
-        subset = self._np_array[subset_indices]
+        subset = self._members[subset_indices]
         subset_sample = Finited(subset)
 
-        complement = self._np_array[complement_indices]
+        complement = self._members[complement_indices]
         complement_sample = Finited(complement)
 
         partition = SubsetComplementPartition(subset_sample, complement_sample)

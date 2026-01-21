@@ -1,4 +1,4 @@
-from mathx.plot.kind.scatter.interface import Interface
+from mathx.view.interface import Interface
 from utilix.oop.design_pattern.structural.decorator.decorator import Decorator as BaseDecorator
 
 

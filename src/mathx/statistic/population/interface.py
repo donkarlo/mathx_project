@@ -1,8 +1,7 @@
-from abc import ABC
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
 from mathx.setex.interface import Interface as SetInterface
 
-
-class Interface(SetInterface, ABC, Protocol):
+@runtime_checkable
+class Interface(SetInterface, Protocol):
     pass
