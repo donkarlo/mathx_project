@@ -3,20 +3,21 @@ import matplotlib
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.axes import Axes
-from mathx.view.pair_set.pair_set import PairSet
 from typing import Union
 from matplotlib.figure import Figure
 from types import ModuleType
 import numpy as np
 
+from mathx.view.kind.point_cloud.point.group.group import Group as PointGroup
+
 
 class View(ABC):
-    def __init__(self, pair_set: PairSet):
-        self._pair_set = pair_set
-        pair_set_members = np.asarray(self._pair_set.get_members())
+    def __init__(self, point_group: PointGroup):
+        self._point_group = point_group
+        pair_set_members = np.asarray(self._point_group.get_members())
         #TODO for the moment from here it is nd array
         if pair_set_members.ndim != 2 or pair_set_members.shape[1] not in (2, 3):
-            raise ValueError("pair_set must be a 2D array with shape (n, 2) or (n, 3)")
+            raise ValueError("group must be a 2D array with shape (n, 2) or (n, 3)")
 
         self._dimension = None
         self._pyplot_figure = plt.figure()
@@ -27,8 +28,8 @@ class View(ABC):
             self._pyplot_axis = self._pyplot_figure.add_subplot(111, projection='3d')
             self._dimension = 3
 
-    def get_pair_set(self) -> PairSet:
-        return self._pair_set
+    def get_point_group(self) -> PointGroup:
+        return self._point_group
 
     def get_pyplot_axis(self) -> Union[Axes, Axes3D]:
         return self._pyplot_axis
@@ -38,15 +39,6 @@ class View(ABC):
 
     def get_pyplot(self)-> ModuleType:
         return plt
-
-    @abstractmethod
-    def build(self):
-        """
-        To add all data sets etc
-        Returns:
-
-        """
-        pass
 
     def render(self):
         plt.show()

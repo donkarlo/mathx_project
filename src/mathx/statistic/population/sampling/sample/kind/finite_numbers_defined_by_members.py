@@ -1,4 +1,4 @@
-from mathx.setex.kind.countable.finit.finite import Finite
+from mathx.set_nd.kind.countable.finit.finite import Finite
 from mathx.statistic.population.population import Population
 from mathx.statistic.population.sampling.sample.sample import Sample
 import numpy as np

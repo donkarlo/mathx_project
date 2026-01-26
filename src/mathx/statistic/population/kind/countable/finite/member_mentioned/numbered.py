@@ -1,20 +1,13 @@
 import numpy as np
 
 from mathx.number.kind.real.interval.unit.open_unit_interval import OpenUnitInterval
-from mathx.setex.kind.countable.finit.finited import Finited
-from mathx.setex.partitioning.partition.kind.subset_complement import SubsetComplement as SubsetComplementPartition
-from mathx.statistic.population.population import Population
-from utilix.data.kind.group.group import Group
+from mathx.set_nd.kind.countable.finit.finited import Finited
+from mathx.set_nd.partitioning.partition.kind.subset_complement import SubsetComplement as SubsetComplementPartition
 
 
-class Numpied(Population):
+class Numbered(Finited):
     def __init__(self, members: np.ndarray):
-        Population.__init__(self, members)
-        self._members = members
-        self._members_group = Group(self._members)
-
-    def get_members_group(self) -> Group:
-        return self._members_group
+        Finited.__init__(self, members)
 
     def get_random_sample_and_complement_by_ratio(self, ratio: OpenUnitInterval) -> SubsetComplementPartition:
         ratio_value = ratio.get_value()

@@ -1,12 +1,12 @@
 import numpy as np
 from mathx.view.kind.point_cloud.decorator.decorator import Decorator
-from mathx.view.kind.point_cloud.decorator.lined.group_pair_seted.group_pair_seted import GroupPairSeted
+from mathx.view.kind.point_cloud.decorator.lined.group_point_seted.group_point_seted import MultiplePointGrouped
 
 
 class OrderedInterLineConnected(Decorator):
-    def __init__(self, inner:GroupPairSeted):
-        if not isinstance(inner, GroupPairSeted):
-            raise TypeError("Inner Type must be GroupPairSeted")
+    def __init__(self, inner:MultiplePointGrouped):
+        if not isinstance(inner, MultiplePointGrouped):
+            raise TypeError("Inner Type must be MultiplePointGrouped")
         Decorator.__init__(self, inner)
 
     def build(self) -> None:
