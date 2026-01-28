@@ -1,19 +1,28 @@
 from abc import ABC, abstractmethod
-from typing import Protocol, runtime_checkable
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from typing import Union
 
-@runtime_checkable
-class Interface(Protocol):
+from mathx.view.kind.point_cloud.point.group.group import Group
 
-    def build(self) -> None: ...
 
+class Interface(ABC):
+
+    @abstractmethod
+    def _build(self) -> None: ...
+
+    @abstractmethod
     def render(self) -> None: ...
 
+    @abstractmethod
     def get_dimension(self) -> int: ...
 
-    def get_pyplot_axis(self) -> Union[Axes, Axes3D]: ...
+    @abstractmethod
+    def get_axis(self) -> Union[Axes, Axes3D]: ...
 
-    def get_pyplot_figure(self) -> Figure: ...
+    @abstractmethod
+    def get_figure(self) -> Figure: ...
+
+    @abstractmethod
+    def get_point_group(self)->Group: ...

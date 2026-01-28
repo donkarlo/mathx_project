@@ -1,15 +1,12 @@
-import matplotlib.pyplot as plt
-
-from mathx.view.pair_set.pair_set import PointSet
 from mathx.view.view import View
-
+from mathx.view.kind.point_cloud.point.group.group import Group as PointGroup
+import numpy as np
+from typing import Union
 
 class PointCloud(View):
-    def __init__(self, point_set: PointSet) -> None:
-        View.__init__(self, point_set)
+    def __init__(self, point_group: PointGroup) -> None:
 
-    def build(self) -> None:
-        plt.scatter(*self.get_point_group().get_members())
+        View.__init__(self, point_group)
 
-    def show(self) -> None:
-        View.show(self)
+    def _build(self) -> None:
+        self.get_axis().scatter(*self.get_point_group().get_members().T, s=1)

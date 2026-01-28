@@ -1,5 +1,7 @@
-from typing import Protocol
+from abc import ABC, abstractmethod
+
+from mathx.view.interface import Interface as ViewInterface
 
 
-class Interface(Protocol):
+class Interface(ViewInterface, ABC):
     pass

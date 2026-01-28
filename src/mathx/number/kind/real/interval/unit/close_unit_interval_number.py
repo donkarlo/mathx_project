@@ -1,4 +1,4 @@
-from mathx.number.kind.type_hints import REAL_SUBSETS
+from mathx.number.type_hint.type_hint import REAL_SUBSETS
 
 class CloseUnitIntervalNumber:
     def __init__(self, value: REAL_SUBSETS):

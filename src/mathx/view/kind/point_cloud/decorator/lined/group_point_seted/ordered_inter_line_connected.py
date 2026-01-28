@@ -1,6 +1,5 @@
-import numpy as np
 from mathx.view.kind.point_cloud.decorator.decorator import Decorator
-from mathx.view.kind.point_cloud.decorator.lined.group_point_seted.group_point_seted import MultiplePointGrouped
+from mathx.view.kind.point_cloud.kind.multiple_point_group.multiple_point_grouped import MultiplePointGrouped
 
 
 class OrderedInterLineConnected(Decorator):
@@ -9,11 +8,11 @@ class OrderedInterLineConnected(Decorator):
             raise TypeError("Inner Type must be MultiplePointGrouped")
         Decorator.__init__(self, inner)
 
-    def build(self) -> None:
+    def _build(self) -> None:
         group_pair_seted_view = self.get_inner()
         group_pair_set_members = group_pair_seted_view.get_group_pair_set().get_members()
-        group_pair_seted_view.build()
-        axis = group_pair_seted_view.get_pyplot_axis()
+        group_pair_seted_view._build()
+        axis = group_pair_seted_view.get_axis()
         for  pair_set in group_pair_set_members:
             pair_set_members = pair_set.get_members()
             axis.plot(*pair_set_members)

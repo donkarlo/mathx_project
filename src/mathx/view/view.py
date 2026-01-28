@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-import matplotlib
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.axes import Axes
@@ -8,10 +7,11 @@ from matplotlib.figure import Figure
 from types import ModuleType
 import numpy as np
 
+from mathx.view.interface import Interface
 from mathx.view.kind.point_cloud.point.group.group import Group as PointGroup
 
 
-class View(ABC):
+class View(Interface, ABC):
     def __init__(self, point_group: PointGroup):
         self._point_group = point_group
         pair_set_members = np.asarray(self._point_group.get_members())
@@ -31,14 +31,21 @@ class View(ABC):
     def get_point_group(self) -> PointGroup:
         return self._point_group
 
-    def get_pyplot_axis(self) -> Union[Axes, Axes3D]:
+    def get_axis(self) -> Union[Axes, Axes3D]:
         return self._pyplot_axis
 
-    def get_pyplot_figure(self) -> Figure:
+    def get_figure(self) -> Figure:
         return self._pyplot_figure
 
     def get_pyplot(self)-> ModuleType:
         return plt
 
+    def get_dimension(self) -> int:
+        return self._dimension
+
+    def get_point_group(self):
+        return self._point_group
+
     def render(self):
-        plt.show()
+        self._build()
+        self.get_pyplot().show()
