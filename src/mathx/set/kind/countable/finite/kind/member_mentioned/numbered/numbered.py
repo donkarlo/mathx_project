@@ -36,3 +36,5 @@ class Numbered(MembersMentioned):
 
             return np.any(np.all(self._members == member, axis=1))
         return False
+    def get_size(self) -> int:
+        return self._members.shape[0]

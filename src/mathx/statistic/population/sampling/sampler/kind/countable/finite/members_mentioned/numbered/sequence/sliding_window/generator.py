@@ -1,6 +1,6 @@
 import numpy as np
 
-from mathx.statistic.population.sampling.kind.countable.finite.members_mentioned.numbered.sequence.sliding_window.sliding_window import SlidingWindow
+from mathx.statistic.population.sampling.sampler.kind.countable.finite.members_mentioned.numbered.sequence.sliding_window.sliding_window import  SlidingWindow
 
 
 class Generator:

@@ -1,7 +1,8 @@
-from mathx.set.set import Set
 from mathx.statistic.population.population import Population
-
+from typing import Iterable
 
 class Countable(Population):
-    def __init__(self, set: Set):
-        Population.__init__(self, set)
+    def __init__(self, members: Iterable):
+        if not isinstance(members, Iterable):
+            raise TypeError('members must be a iterable')
+        Population.__init__(self, members)

@@ -1,9 +1,11 @@
-from mathx.set_nd.partitioning.partition.partition import Partition
-from mathx.set_nd.set_nd import SetNd
+from typing import Any
+
+from mathx.set.partitioning.partition.partition import Partition
+from mathx.set.set import Set
 
 
 class SubsetComplement(Partition):
-    def __init__(self, subset: SetNd, complement: SetNd):
+    def __init__(self, subset: Set, complement: Set):
         self._subset = subset
         self._complement = complement
         Partition.__init__(self, [self._subset, self._complement])
@@ -14,5 +16,12 @@ class SubsetComplement(Partition):
     def get_subset(self):
         return self._subset
 
-    def get_universal_set(self)->SetNd:
+    def get_universal_set(self)->Set:
         pass
+
+    def is_member(self, member: Any) -> bool:
+        if member in self.get_members():
+            return True
+        return False
+
+
